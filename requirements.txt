@@ -1,0 +1,8 @@
+ipystream==0.1.35
+pandas==3.0.5
+openpyxl==3.1.5
+xlsxwriter==3.2.5
+ipydatagrid==1.1.16
+ipyleaflet==0.19.2
+solara==1.45.0
+PyJWT==2.10.1

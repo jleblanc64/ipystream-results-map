@@ -1,0 +1,14 @@
+.idea/
+__pycache__/
+python/__pycache__/
+python/stream/__pycache__/
+results_repository/
+misc/__pycache__/
+kernel_to_user.json
+kernel_to_token.json
+kernel.lock
+misc/p.txt
+misc/p2.txt
+iframe_figures/
+jupyter.ipynb
+logs.txt
