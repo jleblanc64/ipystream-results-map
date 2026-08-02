@@ -1,5 +1,4 @@
 import os
-
 from jproperties import Properties
 import time
 import jwt
@@ -34,11 +33,9 @@ def get_headers_pwd(base_url: str, username: str, pwd: str) -> dict:
 
     return {"authorization": f"Bearer {token}"}
 
-def get_username_password(path: str) -> tuple[str, str]:
+def get_password(path: str) -> str:
     configs = load_config(path)
-    u = configs.get("username").data
-    p = configs.get("password").data
-    return u, p
+    return configs.get("password").data
 
 def load_config(path: str) -> Properties:
     configs = Properties()
