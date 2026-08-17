@@ -640,7 +640,7 @@ def build_map_NETWORK(w: WidgetCurrentsChildren, handle: Handle, m):
     df_net = df_net.groupby(["Link"], as_index=False).sum()
 
     # get links
-    networks = [(row["Link"], row[col_value_net]) for _, row in df_net.iterrows()]
+    networks = [(str(row["Link"]), row[col_value_net]) for _, row in df_net.iterrows()]
 
     h = cache["h"]
     scenario_id = cache["scenario_id"]
@@ -729,7 +729,8 @@ def build_map_NETWORK(w: WidgetCurrentsChildren, handle: Handle, m):
             weight = 15 * value / max_value
             hover_style = {"color": hovered_net_color, "dashArray": "0", "fillOpacity": 0.5}
             name = geojson["features"][0]["properties"]["network_name"]
-            feat = GeoJSON(data=geojson, style={"color": legend[name], "weight": weight}, hover_style=hover_style)
+            color = legend.get(name, "blue")
+            feat = GeoJSON(data=geojson, style={"color": color, "weight": weight}, hover_style=hover_style)
             feat.on_hover(on_hover_network)
             m.add(feat)
 
